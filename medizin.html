@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medizinische Schwerpunkte</title>
+<link rel="stylesheet" href="styles.css" />
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">EinsatzDoku</div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="patienten.html">Patient</a>
+    <a href="einsatz.html">Einsatz</a>
+    <a href="medizin.html">Medizin</a>
+    <a href="tätigkeiten.html">Tätigkeiten</a>
+    <a href="skills.html">Skills</a>
+    <a href="bericht.html">Bericht</a>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="card">
+    <h1>Medizinische Schwerpunkte</h1>
+    <form id="form-medizin">
+      <div class="checks cols2">
+        <label><input type="checkbox" name="reanimation"> Reanimation</label>
+        <label><input type="checkbox" name="blutstillung"> Blutstillung</label>
+        <label><input type="checkbox" name="atemweg"> Atemwegsmanagement</label>
+        <label><input type="checkbox" name="kreislauf"> Medikamentöse Kreislaufstabilisierung</label>
+        <label><input type="checkbox" name="verletzung"> Erstversorgung von Verletzungen</label>
+        <label><input type="checkbox" name="einsatzfuehrung"> Einsatzführung</label>
+      </div>
+      <label>Schmerzen (0-10)<input name="schmerzskala" type="number" min="0" max="10"></label>
+      <label>Wie beschreibst du den Schmerz?<textarea name="schmerzbeschreibung"></textarea></label>
+      <label>Schwindel / Übelkeit / Sonstiges<textarea name="symptome"></textarea></label>
+      <div class="actions">
+        <button type="button" class="btn" data-save="medizin">Speichern</button>
+        <a class="btn secondary" href="tätigkeiten.html">Weiter</a>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>
