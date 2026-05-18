@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tätigkeiten</title>
+<link rel="stylesheet" href="styles.css" />
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">EinsatzDoku</div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="patienten.html">Patient</a>
+    <a href="einsatz.html">Einsatz</a>
+    <a href="medizin.html">Medizin</a>
+    <a href="tätigkeiten.html">Tätigkeiten</a>
+    <a href="skills.html">Skills</a>
+    <a href="bericht.html">Bericht</a>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="card">
+    <h1>Tätigkeiten</h1>
+    <form id="form-taetigkeiten">
+      <div class="checks cols2">
+        <label><input type="checkbox" name="wunde"> Wundversorgung</label>
+        <label><input type="checkbox" name="vene"> Legen einer Venenverweilkanüle unter Anleitung</label>
+        <label><input type="checkbox" name="larynx"> Sicherung der Atemwege mit Larynxtubus unter Anleitung</label>
+        <label><input type="checkbox" name="et"> Sicherung der Atemwege mit Endotrachealtubus unter Anleitung</label>
+        <label><input type="checkbox" name="medomat"> Anschließen an Medomat/Oxylog unter Anleitung</label>
+        <label><input type="checkbox" name="medikamente"> Aufziehen / Verabreichen von Medikamenten unter Anleitung</label>
+        <label><input type="checkbox" name="infusion"> Vorbereiten / Verabreichen von Infusionen unter Anleitung</label>
+        <label><input type="checkbox" name="umlagerung"> Mithilfe beim Umlagern eines Patienten</label>
+        <label><input type="checkbox" name="immobilisation"> Mithilfe bei Vollimmobilisation</label>
+        <label><input type="checkbox" name="doku"> Dokumentation mit Kontrolle</label>
+        <label><input type="checkbox" name="betreuung"> Betreuen von Patienten unter Anleitung</label>
+      </div>
+      <label>Weitere Tätigkeiten<textarea name="weitere_taetigkeiten"></textarea></label>
+      <div class="actions">
+        <button type="button" class="btn" data-save="taetigkeiten">Speichern</button>
+        <a class="btn secondary" href="skills.html">Weiter</a>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>
