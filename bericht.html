@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bericht</title>
-<link rel="stylesheet" href="styles.css" />
-<script defer src="app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bericht</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">EinsatzDoku</div>
-  <nav>
-    <a href="index.html">Start</a>
-    <a href="patienten.html">Patient</a>
-    <a href="einsatz.html">Einsatz</a>
-    <a href="medizin.html">Medizin</a>
-    <a href="tätigkeiten.html">Tätigkeiten</a>
-    <a href="skills.html">Skills</a>
-    <a href="bericht.html">Bericht</a>
-  </nav>
-</header>
-<main class="wrap">
-  <section class="card">
-    <h1>Bericht</h1>
-    <form id="form-bericht">
-      <label>Dokumentation / Hygiene<textarea name="doku_hygiene"></textarea></label>
+  <header class="topbar">
+    <div class="brand">EinsatzDoku</div>
+    <nav class="topnav">
+      <a href="index.html">Start</a>
+      <a href="patienten.html">Patient</a>
+      <a href="einsatz.html">Einsatz</a>
+      <a href="medizin.html">Medizin</a>
+      <a href="taetigkeiten.html">Tätigkeiten</a>
+      <a href="skills.html">Skills</a>
+      <a class="active" href="bericht.html">Bericht</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="card form-page">
+      <div class="section-head">
+        <h1>Bericht</h1>
+        <p>Reflexion, Hygiene und Abschluss der Dokumentation.</p>
+      </div>
+
       <div class="checks cols2">
-        <label><input type="checkbox" name="mundschutz"> Mundschutz</label>
-        <label><input type="checkbox" name="handschuhe"> Handschuhe</label>
-        <label><input type="checkbox" name="brille"> Schutzbrille</label>
-        <label><input type="checkbox" name="desinfektion"> Desinfektion lt. Hygieneplan</label>
-        <label><input type="checkbox" name="tablet"> Dokumentation via Tablet</label>
+        <label><input type="checkbox" /> Mundschutz</label>
+        <label><input type="checkbox" /> Handschuhe</label>
+        <label><input type="checkbox" /> Schutzbrille</label>
+        <label><input type="checkbox" /> Desinfektion lt. Hygieneplan</label>
+        <label><input type="checkbox" /> Dokumentation via Tablet</label>
       </div>
-      <label>Reflexion / Selbsteinschätzung<textarea name="reflexion"></textarea></label>
+
+      <label>Reflexion / Selbsteinschätzung<textarea placeholder="Wie sicher warst du bei den Maßnahmen?"></textarea></label>
+
       <div class="checks">
-        <label><input type="radio" name="selbsteinschaetzung" value="sicher"> Ich habe die Maßnahmen sicher durchgeführt.</label>
-        <label><input type="radio" name="selbsteinschaetzung" value="leicht"> Ich hatte leichte Unsicherheiten beim Durchführen der Maßnahmen.</label>
-        <label><input type="radio" name="selbsteinschaetzung" value="vielhilfe"> Ich habe viel Hilfe benötigt und fühlte mich gänzlich unsicher.</label>
-        <label><input type="radio" name="selbsteinschaetzung" value="ueberfordert"> Ich war komplett überfordert mit der Situation.</label>
+        <label><input type="radio" name="schaetzung" /> Ich habe die Maßnahmen sicher durchgeführt.</label>
+        <label><input type="radio" name="schaetzung" /> Ich hatte leichte Unsicherheiten beim Durchführen der Maßnahmen.</label>
+        <label><input type="radio" name="schaetzung" /> Ich habe viel Hilfe benötigt und fühlte mich gänzlich unsicher.</label>
+        <label><input type="radio" name="schaetzung" /> Ich war komplett überfordert mit der Situation.</label>
       </div>
-      <label>Erfolgserlebnisse<textarea name="erfolg"></textarea></label>
-      <label>Kommentare / Hinweise<textarea name="hinweise"></textarea></label>
-      <label>Unterschrift<textarea name="unterschrift" placeholder="Name oder digitale Unterschrift"></textarea></label>
-      <div class="actions">
-        <button type="button" class="btn" id="printBtn">Bericht drucken</button>
-        <button type="button" class="btn secondary" data-load-all>Alle Daten laden</button>
+
+      <label>Erfolgserlebnisse<textarea placeholder="Was ist besonders gut gelungen?"></textarea></label>
+      <label>Kommentare / Hinweise<textarea placeholder="Weitere Bemerkungen"></textarea></label>
+      <label>Unterschrift<textarea placeholder="Hier erscheint die Unterschrift"></textarea></label>
+
+      <div class="page-actions">
+        <a class="btn ghost" href="skills.html">Zurück</a>
+        <a class="btn" href="index.html">Zur Startseite</a>
       </div>
-    </form>
-    <div class="reportbox" id="reportPreview"></div>
-  </section>
-</main>
+    </section>
+  </main>
 </body>
 </html>
