@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Patientendaten</title>
+<link rel="stylesheet" href="styles.css" />
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">EinsatzDoku</div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="patienten.html">Patient</a>
+    <a href="einsatz.html">Einsatz</a>
+    <a href="medizin.html">Medizin</a>
+    <a href="tätigkeiten.html">Tätigkeiten</a>
+    <a href="skills.html">Skills</a>
+    <a href="bericht.html">Bericht</a>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="card">
+    <h1>Patientendaten</h1>
+    <form id="form-patienten">
+      <label>Name<input name="name" type="text"></label>
+      <label>Alter<input name="alter" type="text"></label>
+      <label>Geburtsdatum<input name="geburtsdatum" type="date"></label>
+      <label>Datum<input name="datum" type="date"></label>
+      <label>Uhrzeit<input name="uhrzeit" type="time"></label>
+      <label>Geschlecht<input name="geschlecht" type="text"></label>
+      <label>Telefon/Notiz<input name="kontakt" type="text"></label>
+      <div class="actions">
+        <button type="button" class="btn" data-save="patienten">Speichern</button>
+        <a class="btn secondary" href="einsatz.html">Weiter</a>
+      </div>
+    </form>
+  </section>
+</main>
+</body>
+</html>
