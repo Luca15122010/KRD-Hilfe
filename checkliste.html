@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkliste</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">EinsatzDoku</div>
+    <nav class="topnav">
+      <a href="index.html">Start</a>
+      <a href="patienten.html">Patient</a>
+      <a href="einsatz.html">Einsatz</a>
+      <a href="medizin.html">Medizin</a>
+      <a href="taetigkeiten.html">Tätigkeiten</a>
+      <a href="skills.html">Skills</a>
+      <a class="active" href="checkliste.html">Checkliste</a>
+      <a href="bericht.html">Bericht</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="card form-page">
+      <div class="section-head">
+        <h1>Checkliste</h1>
+        <p>Schnelle Abfrage für Einsatz, Schmerzen und Trauma.</p>
+      </div>
+
+      <div class="check-panel">
+        <h2>Allgemein</h2>
+        <div class="form-grid">
+          <label>Was ist passiert?<textarea placeholder="Kurze Beschreibung des Ereignisses"></textarea></label>
+          <label>Datum / Uhrzeit<input type="text" placeholder="z. B. 18.05.2026 / 20:45" /></label>
+          <label>Orientierung<input type="text" placeholder="Person / Ort / Zeit / Situation" /></label>
+          <label>Krankenhaus</label>
+          <div class="checks">
+            <label><input type="radio" name="kh" /> Ja</label>
+            <label><input type="radio" name="kh" /> Nein</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="check-panel">
+        <h2>Beschwerden</h2>
+        <div class="checks cols2">
+          <label><input type="checkbox" /> Schmerzen</label>
+          <label><input type="checkbox" /> Schwindel</label>
+          <label><input type="checkbox" /> Übelkeit</label>
+          <label><input type="checkbox" /> Atemnot</label>
+          <label><input type="checkbox" /> Bewusstseinsstörung</label>
+          <label><input type="checkbox" /> Blutung</label>
+        </div>
+
+        <div class="form-grid">
+          <label>Schmerzskala (0-10)<input type="number" min="0" max="10" placeholder="0-10" /></label>
+          <label>Schmerzmittel genommen?<input type="text" placeholder="Ja / Nein / welches?" /></label>
+        </div>
+
+        <label>Wie beschreiben?<textarea placeholder="z. B. stechend, drückend, brennend ..."></textarea></label>
+        <label>Wie stark / wo genau / was ist passiert?<textarea placeholder="Mehr Details zur Beschwerde"></textarea></label>
+      </div>
+
+      <div class="check-panel">
+        <h2>SAMPLE</h2>
+        <div class="sample-grid">
+          <label><strong>S</strong> Symptome<textarea placeholder="Welche Symptome hat der Patient?"></textarea></label>
+          <label><strong>A</strong> Allergien<input type="text" placeholder="Allergien?" /></label>
+          <label><strong>M</strong> Medikamente<input type="text" placeholder="Regelmäßige Medikamente?" /></label>
+          <label><strong>P</strong> Vorerkrankungen<textarea placeholder="Vorerkrankungen / Diagnosen"></textarea></label>
+          <label><strong>L</strong> Letzte Mahlzeit<input type="text" placeholder="Wann zuletzt gegessen/getrunken?" /></label>
+          <label><strong>E</strong> Ereignis<textarea placeholder="Was ist passiert?"></textarea></label>
+        </div>
+      </div>
+
+      <div class="check-panel">
+        <h2>OPQRST</h2>
+        <div class="sample-grid">
+          <label><strong>O</strong> Onset<textarea placeholder="Wann hat es begonnen?"></textarea></label>
+          <label><strong>P</strong> Provocation/Palliation<textarea placeholder="Was macht es besser oder schlimmer?"></textarea></label>
+          <label><strong>Q</strong> Quality<textarea placeholder="Wie fühlt es sich an?"></textarea></label>
+          <label><strong>R</strong> Region/Radiation<textarea placeholder="Wo ist der Schmerz, strahlt er aus?"></textarea></label>
+          <label><strong>S</strong> Severity<input type="number" min="0" max="10" placeholder="0-10" /></label>
+          <label><strong>T</strong> Time<textarea placeholder="Seit wann / Verlauf?"></textarea></label>
+        </div>
+      </div>
+
+      <div class="check-panel">
+        <h2>XABCDE</h2>
+        <div class="checks cols2">
+          <label><input type="checkbox" /> X: Massive Blutung stoppen</label>
+          <label><input type="checkbox" /> A: Atemweg frei</label>
+          <label><input type="checkbox" /> B: Atmung geprüft</label>
+          <label><input type="checkbox" /> C: Kreislauf geprüft</label>
+          <label><input type="checkbox" /> D: Neurologischer Status geprüft</label>
+          <label><input type="checkbox" /> E: Vollständige Untersuchung</label>
+        </div>
+
+        <label>Besonderheiten / Notizen<textarea placeholder="Weitere wichtige Hinweise"></textarea></label>
+      </div>
+
+      <div class="page-actions">
+        <a class="btn ghost" href="skills.html">Zurück</a>
+        <a class="btn" href="bericht.html">Weiter zum Bericht</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
