@@ -3,58 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bericht</title>
+  <title>Anamnesebrief / Bericht</title>
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header class="topbar">
     <div class="brand">EinsatzDoku</div>
     <nav class="topnav">
       <a href="index.html">Start</a>
-      <a href="patienten.html">Patient</a>
-      <a href="einsatz.html">Einsatz</a>
-      <a href="medizin.html">Medizin</a>
-      <a href="taetigkeiten.html">Tätigkeiten</a>
-      <a href="skills.html">Skills</a>
+      <a href="patientenfrage.html">Patientenfrage</a>
       <a class="active" href="bericht.html">Bericht</a>
-      <a href="checkliste.html">Checkliste</a>
+      <a href="gespeichert.html">Gespeichert</a>
     </nav>
   </header>
 
   <main class="wrap">
     <section class="card form-page">
       <div class="section-head">
-        <h1>Bericht</h1>
-        <p>Reflexion, Hygiene und Abschluss der Dokumentation.</p>
+        <h1>Anamnesebrief / Bericht</h1>
+        <p>Ausführlicher Bericht für die Dokumentation.</p>
       </div>
 
-      <div class="checks cols2">
-        <label><input type="checkbox" /> Mundschutz</label>
-        <label><input type="checkbox" /> Handschuhe</label>
-        <label><input type="checkbox" /> Schutzbrille</label>
-        <label><input type="checkbox" /> Desinfektion lt. Hygieneplan</label>
-        <label><input type="checkbox" /> Dokumentation via Tablet</label>
-      </div>
+      <form id="reportForm" class="form-stack">
+        <div class="form-grid">
+          <label>Name<input name="name" type="text" /></label>
+          <label>Geburtsdatum<input name="geburtsdatum" type="date" /></label>
+          <label>Alter<input name="alter" type="text" /></label>
+          <label>Datum<input name="datum" type="date" /></label>
+          <label>Uhrzeit<input name="uhrzeit" type="time" /></label>
+          <label>Ort des Einsatzes<input name="ort" type="text" /></label>
+        </div>
 
-      <label>Reflexion / Selbsteinschätzung<textarea placeholder="Wie sicher warst du bei den Maßnahmen?"></textarea></label>
+        <label>Anlass / Beschwerden<textarea name="anlass"></textarea></label>
+        <label>Vorerkrankungen<textarea name="vorerkrankungen"></textarea></label>
+        <label>Medikamente<textarea name="medikamente"></textarea></label>
+        <label>Allergien<textarea name="allergien"></textarea></label>
+        <label>Verlauf / Maßnahmen<textarea name="verlauf"></textarea></label>
+        <label>Beurteilung / Verdacht<textarea name="beurteilung"></textarea></label>
+        <label>Bemerkungen<textarea name="bemerkungen"></textarea></label>
 
-      <div class="checks">
-        <label><input type="radio" name="schaetzung" /> Ich habe die Maßnahmen sicher durchgeführt.</label>
-        <label><input type="radio" name="schaetzung" /> Ich hatte leichte Unsicherheiten beim Durchführen der Maßnahmen.</label>
-        <label><input type="radio" name="schaetzung" /> Ich habe viel Hilfe benötigt und fühlte mich gänzlich unsicher.</label>
-        <label><input type="radio" name="schaetzung" /> Ich war komplett überfordert mit der Situation.</label>
-      </div>
-
-      <label>Erfolgserlebnisse<textarea placeholder="Was ist besonders gut gelungen?"></textarea></label>
-      <label>Kommentare / Hinweise<textarea placeholder="Weitere Bemerkungen"></textarea></label>
-      <label>Unterschrift<textarea placeholder="Hier erscheint die Unterschrift"></textarea></label>
-
-      <div class="page-actions">
-        <a class="btn ghost" href="skills.html">Zurück</a>
-        <a class="btn" href="index.html">Zur Startseite</a>
-      </div>
+        <div class="page-actions">
+          <button class="btn" type="submit">Bericht speichern</button>
+          <a class="btn ghost" href="gespeichert.html">Zu den Einträgen</a>
+        </div>
+      </form>
     </section>
   </main>
-  <script src="script.js"></script>
 </body>
 </html>
