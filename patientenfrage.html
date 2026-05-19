@@ -13,6 +13,7 @@
     <nav class="topnav">
       <a href="index.html">Start</a>
       <a class="active" href="patientenfrage.html">Patientenfrage</a>
+      <a href="bericht.html">Bericht</a>
       <a href="gespeichert.html">Gespeichert</a>
     </nav>
   </header>
@@ -26,15 +27,15 @@
 
       <form id="patientForm" class="form-stack">
         <div class="form-grid">
-          <label>Name<input name="name" type="text" placeholder="Name" /></label>
-          <label>Alter<input name="alter" type="text" placeholder="Alter" /></label>
+          <label>Name<input name="name" type="text" /></label>
+          <label>Alter<input name="alter" type="text" /></label>
           <label>Geburtsdatum<input name="geburtsdatum" type="date" /></label>
           <label>Datum<input name="datum" type="date" /></label>
           <label>Uhrzeit<input name="uhrzeit" type="time" /></label>
           <label>Orientierung<input name="orientierung" type="text" placeholder="Person / Ort / Zeit / Situation" /></label>
         </div>
 
-        <label>Was ist passiert?<textarea name="was_passiert" placeholder="Kurze Beschreibung"></textarea></label>
+        <label>Was ist passiert?<textarea name="was_passiert"></textarea></label>
 
         <div class="checks cols2">
           <label><input type="checkbox" name="schmerzen" value="ja" /> Schmerzen</label>
@@ -45,15 +46,15 @@
 
         <div class="form-grid">
           <label>Schmerzskala (0-10)<input name="schmerzskala" type="number" min="0" max="10" /></label>
-          <label>Schmerzmittel<input name="schmerzmittel" type="text" placeholder="Ja / Nein / was?" /></label>
+          <label>Schmerzmittel<input name="schmerzmittel" type="text" /></label>
         </div>
 
-        <label>Wie beschreibt der Patient den Schmerz?<textarea name="schmerzbeschreibung" placeholder="z. B. stechend, drückend ..."></textarea></label>
-        <label>Krankenhaus<textarea name="krankenhaus" placeholder="Ja / Nein / bedenken?"></textarea></label>
+        <label>Schmerzbeschreibung<textarea name="schmerzbeschreibung"></textarea></label>
+        <label>Krankenhaus<textarea name="krankenhaus"></textarea></label>
 
         <div class="page-actions">
           <button class="btn" type="submit">Speichern</button>
-          <a class="btn ghost" href="gespeichert.html">Zu den gespeicherten Einträgen</a>
+          <a class="btn ghost" href="gespeichert.html">Zu den Einträgen</a>
         </div>
       </form>
     </section>
