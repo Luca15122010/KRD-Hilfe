@@ -18,9 +18,7 @@ function setItems(key, items) {
 
 function readForm(form) {
   const data = {};
-  const elements = form.querySelectorAll("input, textarea, select");
-
-  elements.forEach((el) => {
+  form.querySelectorAll("input, textarea, select").forEach((el) => {
     if (!el.name) return;
 
     if (el.type === "checkbox") {
@@ -36,7 +34,6 @@ function readForm(form) {
 
     data[el.name] = el.value;
   });
-
   return data;
 }
 
@@ -47,6 +44,10 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function formatLabel(key) {
+  return key.replaceAll("_", " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 function saveForm(formId, storageKey, redirectTo) {
@@ -71,12 +72,6 @@ function saveForm(formId, storageKey, redirectTo) {
   });
 }
 
-function formatLabel(key) {
-  return key
-    .replaceAll("_", " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
 function renderEntries(type) {
   const list = document.getElementById("savedList");
   if (!list) return;
@@ -88,6 +83,11 @@ function renderEntries(type) {
     return;
   }
 
+  const title =
+    type === "patient" ? "Patientenfrage" :
+    type === "report" ? "Bericht" :
+    "xABCDE";
+
   list.innerHTML = items.map((entry, index) => {
     const fields = Object.entries(entry.data).map(([key, value]) => {
       const text = Array.isArray(value) ? value.join(", ") : (value || "-");
@@ -98,11 +98,6 @@ function renderEntries(type) {
         </div>
       `;
     }).join("");
-
-    const title =
-      type === "patient" ? "Patientenfrage" :
-      type === "report" ? "Bericht" :
-      "xABCDE";
 
     return `
       <article class="saved-item">
@@ -118,7 +113,7 @@ function setupSwitcher() {
   const buttons = document.querySelectorAll(".tab-btn");
   if (!buttons.length) return;
 
-  let active = buttons[0]?.dataset.view || "patient";
+  let active = document.querySelector(".tab-btn.active")?.dataset.view || "patient";
   renderEntries(active);
 
   buttons.forEach((btn) => {
