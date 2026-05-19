@@ -115,7 +115,8 @@ p{margin:0 0 10px;color:#33506d}
   color:#fff;
   font-weight:700;
   box-shadow:0 12px 28px rgba(29,78,216,.25);
-  transition:transform .2s ease,box-shadow .2s ease
+  transition:transform .2s ease,box-shadow .2s ease;
+  cursor:pointer
 }
 .btn:hover{
   transform:translateY(-2px);
@@ -174,6 +175,10 @@ p{margin:0 0 10px;color:#33506d}
   color:#4b6b86
 }
 .form-page{
+  display:grid;
+  gap:16px
+}
+.form-stack{
   display:grid;
   gap:16px
 }
@@ -236,6 +241,42 @@ textarea{
   margin-top:2px;
   accent-color:#1d4ed8
 }
+.saved-list{
+  display:grid;
+  gap:14px
+}
+.saved-item{
+  padding:18px;
+  border:1px solid #dbe6f3;
+  border-radius:18px;
+  background:linear-gradient(180deg,#fbfdff,#f7fbff);
+  box-shadow:0 8px 20px rgba(15,23,42,.05)
+}
+.saved-item h3{
+  margin:0 0 10px;
+  color:#12355c
+}
+.saved-item .meta{
+  font-size:.92rem;
+  color:#56708b;
+  margin-bottom:10px
+}
+.saved-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px
+}
+.saved-field{
+  padding:10px 12px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #edf2f7
+}
+.saved-field strong{
+  display:block;
+  color:#1d4ed8;
+  margin-bottom:4px
+}
 .placeholder-box{
   padding:18px;
   border:1px dashed #94a3b8;
@@ -244,7 +285,7 @@ textarea{
   color:#14324d
 }
 @media (max-width:900px){
-  .nav-grid.two,.form-grid,.checks.cols2{grid-template-columns:1fr}
+  .nav-grid.two,.form-grid,.checks.cols2,.saved-grid{grid-template-columns:1fr}
   .topbar{position:static}
   .wrap{padding:18px}
 }
