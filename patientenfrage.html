@@ -1,63 +1,32 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patientenfrage</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">EinsatzDoku</div>
-    <nav class="topnav">
-      <a href="index.html">Start</a>
-      <a class="active" href="patientenfrage.html">Patientenfrage</a>
-      <a href="bericht.html">Bericht</a>
-      <a href="gespeichert.html">Gespeichert</a>
-    </nav>
-  </header>
+<form id="patientForm" class="form-stack">
+  <div class="form-grid">
+    <label>Name<input name="name" type="text" /></label>
+    <label>Alter<input name="alter" type="text" /></label>
+    <label>Geburtsdatum<input name="geburtsdatum" type="date" /></label>
+    <label>Datum<input name="datum" type="date" /></label>
+    <label>Uhrzeit<input name="uhrzeit" type="time" /></label>
+    <label>Orientierung<input name="orientierung" type="text" /></label>
+  </div>
 
-  <main class="wrap">
-    <section class="card form-page">
-      <div class="section-head">
-        <h1>Patientenfrage</h1>
-        <p>Kurze Abfrage direkt am Patienten.</p>
-      </div>
+  <label>Was ist passiert?<textarea name="was_passiert"></textarea></label>
 
-      <form id="patientForm" class="form-stack">
-        <div class="form-grid">
-          <label>Name<input name="name" type="text" /></label>
-          <label>Alter<input name="alter" type="text" /></label>
-          <label>Geburtsdatum<input name="geburtsdatum" type="date" /></label>
-          <label>Datum<input name="datum" type="date" /></label>
-          <label>Uhrzeit<input name="uhrzeit" type="time" /></label>
-          <label>Orientierung<input name="orientierung" type="text" placeholder="Person / Ort / Zeit / Situation" /></label>
-        </div>
+  <div class="checks cols2">
+    <label><input type="checkbox" name="schmerzen" value="ja" /> Schmerzen</label>
+    <label><input type="checkbox" name="schwindel" value="ja" /> Schwindel</label>
+    <label><input type="checkbox" name="uebelkeit" value="ja" /> Übelkeit</label>
+    <label><input type="checkbox" name="atemnot" value="ja" /> Atemnot</label>
+  </div>
 
-        <label>Was ist passiert?<textarea name="was_passiert"></textarea></label>
+  <div class="form-grid">
+    <label>Schmerzskala (0-10)<input name="schmerzskala" type="number" min="0" max="10" /></label>
+    <label>Schmerzmittel<input name="schmerzmittel" type="text" /></label>
+  </div>
 
-        <div class="checks cols2">
-          <label><input type="checkbox" name="schmerzen" value="ja" /> Schmerzen</label>
-          <label><input type="checkbox" name="schwindel" value="ja" /> Schwindel</label>
-          <label><input type="checkbox" name="uebelkeit" value="ja" /> Übelkeit</label>
-          <label><input type="checkbox" name="atemnot" value="ja" /> Atemnot</label>
-        </div>
+  <label>Schmerzbeschreibung<textarea name="schmerzbeschreibung"></textarea></label>
+  <label>Krankenhaus<textarea name="krankenhaus"></textarea></label>
 
-        <div class="form-grid">
-          <label>Schmerzskala (0-10)<input name="schmerzskala" type="number" min="0" max="10" /></label>
-          <label>Schmerzmittel<input name="schmerzmittel" type="text" /></label>
-        </div>
-
-        <label>Schmerzbeschreibung<textarea name="schmerzbeschreibung"></textarea></label>
-        <label>Krankenhaus<textarea name="krankenhaus"></textarea></label>
-
-        <div class="page-actions">
-          <button class="btn" type="submit">Speichern</button>
-          <a class="btn ghost" href="gespeichert.html">Zu den Einträgen</a>
-        </div>
-      </form>
-    </section>
-  </main>
-</body>
-</html>
+  <div class="page-actions">
+    <button class="btn" type="submit">Speichern</button>
+    <a class="btn ghost" href="gespeichert.html">Zu den Einträgen</a>
+  </div>
+</form>
