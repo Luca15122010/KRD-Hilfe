@@ -1,11 +1,14 @@
-const STORAGE_KEY = "einsatzdoku_entries";
+const KEYS = {
+  patient: "einsatzdoku_patientenfragen",
+  report: "einsatzdoku_berichte"
+};
 
-function getEntries() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+function getItems(key) {
+  return JSON.parse(localStorage.getItem(key) || "[]");
 }
 
-function setEntries(entries) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+function setItems(key, items) {
+  localStorage.setItem(key, JSON.stringify(items));
 }
 
 function readForm(form) {
@@ -33,39 +36,63 @@ function escapeHtml(str) {
     .replaceAll("'", "&#39;");
 }
 
-function renderSaved() {
-  const list = document.getElementById("savedList");
-  if (!list) return;
-
-  const entries = getEntries();
-  if (!entries.length) {
-    list.innerHTML = '<div class="placeholder-box">Noch keine Einträge gespeichert.</div>';
-    return;
-  }
-
-  list.innerHTML = entries.map((entry, index) => {
-    const items = Object.entries(entry.data).map(([key, value]) => {
-      const text = Array.isArray(value) ? value.join(", ") : (value || "-");
-      return `<div class="saved-field"><strong>${escapeHtml(key)}</strong>${escapeHtml(text)}</div>`;
-    }).join("");
-
-    return `<article class="saved-item"><h3>Eintrag ${index + 1}</h3><div class="meta">${escapeHtml(entry.savedAt)}</div><div class="saved-grid">${items}</div></article>`;
-  }).join("");
-}
-
-function setupForm() {
-  const form = document.getElementById("patientForm");
+function saveForm(formId, storageKey, redirectTo) {
+  const form = document.getElementById(formId);
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const entries = getEntries();
-    entries.unshift({
+    const items = getItems(storageKey);
+    items.unshift({
       savedAt: new Date().toLocaleString("de-DE"),
       data: readForm(form)
     });
-    setEntries(entries);
-    window.location.href = "gespeichert.html";
+    setItems(storageKey, items);
+    window.location.href = redirectTo;
+  });
+}
+
+function renderEntries(type) {
+  const list = document.getElementById("savedList");
+  if (!list) return;
+
+  const items = getItems(KEYS[type]);
+
+  if (!items.length) {
+    list.innerHTML = '<div class="placeholder-box">Noch keine Einträge gespeichert.</div>';
+    return;
+  }
+
+  list.innerHTML = items.map((entry, index) => {
+    const fields = Object.entries(entry.data).map(([key, value]) => {
+      const text = Array.isArray(value) ? value.join(", ") : (value || "-");
+      return `<div class="saved-field"><strong>${escapeHtml(key)}</strong>${escapeHtml(text)}</div>`;
+    }).join("");
+
+    return `
+      <article class="saved-item">
+        <h3>${type === "patient" ? "Patientenfrage" : "Bericht"} ${index + 1}</h3>
+        <div class="meta">${escapeHtml(entry.savedAt)}</div>
+        <div class="saved-grid">${fields}</div>
+      </article>
+    `;
+  }).join("");
+}
+
+function setupSwitcher() {
+  const buttons = document.querySelectorAll(".tab-btn");
+  if (!buttons.length) return;
+
+  let active = "patient";
+  renderEntries(active);
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      active = btn.dataset.view;
+      renderEntries(active);
+    });
   });
 }
 
@@ -75,14 +102,16 @@ function setupClear() {
 
   btn.addEventListener("click", () => {
     if (confirm("Alle gespeicherten Einträge wirklich löschen?")) {
-      setEntries([]);
-      renderSaved();
+      setItems(KEYS.patient, []);
+      setItems(KEYS.report, []);
+      renderEntries("patient");
     }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  setupForm();
-  renderSaved();
+  saveForm("patientForm", KEYS.patient, "gespeichert.html");
+  saveForm("reportForm", KEYS.report, "gespeichert.html");
+  setupSwitcher();
   setupClear();
 });
