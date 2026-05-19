@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>xABCDE-Schema</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">EinsatzDoku</div>
+    <nav class="topnav">
+      <a href="index.html">Start</a>
+      <a href="patientenfrage.html">Patientenfrage</a>
+      <a href="bericht.html">Bericht</a>
+      <a class="active" href="xabcde.html">xABCDE</a>
+      <a href="gespeichert.html">Gespeichert</a>
+    </nav>
+  </header>
 
+  <main class="wrap">
+    <section class="card form-page">
+      <div class="section-head">
+        <h1>xABCDE-Schema</h1>
+        <p>Strukturierte Untersuchung nach dem xABCDE-Prinzip.</p>
+      </div>
+
+      <form id="xabcdeForm" class="form-stack">
+        <div class="form-grid">
+          <label>Name<input name="name" type="text" /></label>
+          <label>Datum<input name="datum" type="date" /></label>
+          <label>Uhrzeit<input name="uhrzeit" type="time" /></label>
+          <label>Einsatzort<input name="ort" type="text" /></label>
+        </div>
+
+        <label>Allgemeiner Eindruck<textarea name="allgemeiner_eindruck"></textarea></label>
+
+        <label>X - Massive Blutung<textarea name="x"></textarea></label>
+        <label>A - Atemweg<textarea name="a"></textarea></label>
+        <label>B - Atmung<textarea name="b"></textarea></label>
+        <label>C - Kreislauf<textarea name="c"></textarea></label>
+        <label>D - Disability<textarea name="d"></textarea></label>
+        <label>E - Exposure / Wärmeerhalt<textarea name="e"></textarea></label>
+
+        <div class="form-grid">
+          <label>GCS<input name="gcs" type="text" placeholder="z. B. 15" /></label>
+          <label>SpO2<input name="spo2" type="text" placeholder="z. B. 98%" /></label>
+          <label>Puls<input name="puls" type="text" placeholder="z. B. 92/min" /></label>
+          <label>RR<input name="rr" type="text" placeholder="z. B. 120/80" /></label>
+        </div>
+
+        <label>Maßnahmen<textarea name="massnahmen"></textarea></label>
+        <label>Bemerkungen<textarea name="bemerkungen"></textarea></label>
+
+        <div class="page-actions">
+          <button class="btn" type="submit">xABCDE speichern</button>
+          <a class="btn ghost" href="gespeichert.html">Zu den Einträgen</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
